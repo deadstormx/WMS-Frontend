@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom'; // 🟢 added useLocation
-import '../styles/Forgotpassword.css'; 
+import '../styles/ForgotPassword.css';
 import formImage from '../assets/password.png'; 
 import 'font-awesome/css/font-awesome.min.css';
 import ErrorPopup from "../components/Userdashboard/Navbar/ErrorPopup";
