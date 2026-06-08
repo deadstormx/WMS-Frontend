@@ -1,0 +1,394 @@
+/* Main Layout - Inherit from parent or define if needed */
+.pickup-container {
+  display: flex;
+  /* min-height: 100vh; */
+  background-color: #f9f9f9; /* Match AdminDashboard background */
+  font-family: 'Arial', sans-serif; /* Or match Figma font */
+}
+
+/* Content Area - Apply card styling */
+.pickup-content {
+  margin-left: 10px;
+  margin-top: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  padding: 25px 30px;
+  /* width: calc(100% - 250px - 40px); */
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Pickup Header: Title and Search */
+.pickup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+  margin-bottom: 30px;
+}
+
+.pickup-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Search Wrapper */
+.search-wrapper {
+  position: relative;
+  max-width: 200px;
+  margin-top: 3px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 2px;
+  top: 46%;
+  transform: translateY(-50%);
+  color: #ccc;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 9px 5px 9px 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background-color: #fff;
+}
+
+.search-input:focus {
+  border-color: #395849;
+  box-shadow: 0 0 0 2px rgba(57, 88, 73, 0.1);
+}
+
+/* ===== Filter Styles ===== */
+.filter-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-toggle:hover {
+  background-color: #eee;
+  border-color: #ccc;
+}
+
+.filter-panel {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-size: 13px;
+  color: #666;
+  font-weight: 500;
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+  background-color: white;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+  border-color: #395849;
+  box-shadow: 0 0 0 2px rgba(57, 88, 73, 0.1);
+}
+
+.date-range .date-inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.date-range input[type="date"] {
+  flex: 1 1 120px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.date-range span {
+  color: #666;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.clear-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-end;
+}
+
+.clear-filters:hover {
+  background-color: #f5f5f5;
+  border-color: #ccc;
+}
+
+/* ===== Table Styles ===== */
+.pickup-table-container {
+  flex-grow: 1;
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Table Row Styles (using divs) */
+.table-row {
+  display: flex;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 13px;
+  color: #555;
+  align-items: center;
+  width: 100%;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-header {
+  font-weight: 600;
+  color: #333;
+  font-size: 12px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #eee;
+}
+
+/* Table Cell Styles */
+.table-cell {
+  padding: 0 10px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Column widths - more compact */
+.table-cell:nth-child(1) { width: 12%; } /* Date */
+.table-cell:nth-child(2) { width: 12%; } /* Location */
+.table-cell:nth-child(3) { width: 12%; } /* Route */
+.table-cell:nth-child(4) { width: 8%; } /* Type */
+.table-cell:nth-child(5) { width: 8%; } /* Amount */
+.table-cell:nth-child(6) { width: 15%; } /* User */
+.table-cell:nth-child(7) { width: 10%; } /* Status */
+
+/* Remove any flex-basis properties */
+.table-cell:nth-child(1),
+.table-cell:nth-child(2),
+.table-cell:nth-child(3),
+.table-cell:nth-child(4),
+.table-cell:nth-child(5),
+.table-cell:nth-child(6),
+.table-cell:nth-child(7) {
+  flex-basis: auto;
+}
+
+/* Status Badges (reuse from AdminDashboard.css if defined globally, or redefine here) */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-pending {
+  background-color: #ffebee;
+  color: #dc3545;
+}
+
+.status-completed {
+  background-color: #e8f5e9;
+  color: #198754;
+}
+
+/* Add other status styles if needed (e.g., in-progress, scheduled) */
+
+
+/* Pagination */
+.pickup-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  margin-top: auto;
+  border-top: 1px solid #f0f0f0;
+}
+
+.pagination-info {
+  color: #777;
+  font-size: 13px;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.pagination-btn {
+  padding: 6px 12px;
+  border: 1px solid #e0e0e0;
+  background-color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 13px;
+  color: #555;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: #f8f8f8;
+  border-color: #ccc;
+}
+
+.pagination-btn.active {
+  background-color: #395849;
+  color: white;
+  border-color: #395849;
+  font-weight: 500;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #f5f5f5;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 14px;
+}
+
+.error {
+  color: #dc3545;
+}
+
+/* Remove old table styles if they exist */
+.pickup-table {
+  display: none; 
+}
+
+/* Header Controls */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* ===== Utility Classes ===== */
+.no-results {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+/* ===== Responsive Styles ===== */
+@media (max-width: 1200px) {
+  .pickup-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-wrapper {
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .pickup-content {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .pickup-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-wrapper {
+    max-width: 100%;
+  }
+
+  .table-cell {
+    font-size: 12px;
+    padding: 0 8px;
+  }
+
+  .pagination-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .date-range .date-inputs {
+    flex-direction: column;
+    gap: 6px;
+    align-items: stretch;
+  }
+  .date-range input[type="date"] {
+    width: 100%;
+  }
+}

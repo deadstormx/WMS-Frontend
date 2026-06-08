@@ -1,0 +1,221 @@
+/* Main Layout */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f9f9f9; /* Lighter background like design */
+  font-family: 'Arial', sans-serif; /* Or match Figma font */
+  padding-top: 60px; /* Add padding to account for fixed header */
+}
+
+/* Dashboard Content Area */
+.dashboard-content {
+  /* Adjust margin-left based on actual Sidebarr width */
+  margin-left: 10px; 
+  padding: 30px; /* Padding around content */
+  width: calc(100% - 250px); /* Adjust width based on Sidebarr */
+  display: flex;
+  flex-direction: column; /* Stack top row and activities */
+  gap: 30px; /* Space between top row and activities */
+  margin-top: 0; /* Remove any existing top margin */
+}
+
+/* General Card Styling */
+.card {
+  background-color: white;
+  border-radius: 12px; /* Rounded corners */
+  padding: 20px 25px; /* Padding inside cards */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07); /* Subtle shadow */
+}
+
+/* Card Header Styling */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px; /* Space below header */
+  padding-bottom: 10px; /* Space before content */
+  border-bottom: 1px solid #f0f0f0; /* Subtle separator */
+}
+
+.card-header .section-title,
+.card-header h3 {
+  margin: 0;
+  font-size: 16px; /* Consistent title size */
+  font-weight: 600; /* Bolder title */
+  color: #333;
+}
+
+.card-header .icon-placeholder,
+.card-header .view-all-link {
+  color: #888; /* Icon/link color */
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.card-header .view-all-link {
+  text-decoration: none;
+  font-weight: 500;
+}
+.card-header .view-all-link:hover {
+  text-decoration: underline;
+  color: #555;
+}
+
+/* Top Row Layout */
+.dashboard-top-row {
+  display: flex;
+  gap: 30px; /* Space between routes and stats */
+}
+
+/* Routes Section */
+.routes-section {
+  flex: 2; /* Takes more space */
+}
+
+.route-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fdfdfd; /* Slightly off-white */
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.route-card:last-child {
+  margin-bottom: 0;
+}
+
+.route-card .icon-placeholder.truck-icon {
+  font-size: 20px; /* Adjust icon size */
+  color: #555;
+  margin-right: 15px;
+}
+
+.route-details {
+  flex-grow: 1;
+}
+
+.route-details h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+}
+
+.route-time {
+  margin: 0;
+  color: #777;
+  font-size: 12px;
+}
+
+/* Stats Section */
+.stats-section {
+  flex: 1; /* Takes less space */
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Space between the two stat cards */
+}
+
+.stat-card {
+  padding-top: 15px; /* Adjust padding if needed */
+  padding-bottom: 15px;
+}
+
+.stat-card .card-header {
+  margin-bottom: 10px; /* Adjust space */
+  padding-bottom: 8px;
+  border: none; /* Remove border for stats */
+}
+.stat-card .card-header h3 {
+  font-size: 14px; /* Smaller title for stats */
+  font-weight: 500;
+  color: #666;
+}
+.stat-card .card-header .icon-placeholder {
+  font-size: 18px; /* Adjust icon size */
+}
+
+.stat-value {
+  font-size: 28px; /* Larger value */
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+/* Activities Section */
+.activities-section {
+  /* Takes full width as it's direct child of flex column */
+}
+
+.activities-table {
+  /* No background needed if section has card style */
+}
+
+.table-row {
+  display: flex; /* Use flex for rows */
+  padding: 12px 0; /* Padding top/bottom, no side padding needed */
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 13px; /* Slightly smaller table text */
+  color: #555;
+}
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-header {
+  font-weight: 600;
+  color: #333;
+  font-size: 12px; /* Smaller header text */
+  padding-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table-cell {
+  flex: 1; /* Distribute space equally by default */
+  padding: 0 10px; /* Padding within cells */
+  text-align: left;
+}
+/* Adjust flex basis for specific columns */
+.table-cell:nth-child(1) { flex-basis: 25%; } /* Date */
+.table-cell:nth-child(2) { flex-basis: 20%; } /* Location */
+.table-cell:nth-child(3) { flex-basis: 15%; } /* Type */
+.table-cell:nth-child(4) { flex-basis: 15%; text-align: right;} /* Amount */
+.table-cell:nth-child(5) { flex-basis: 25%; text-align: center;} /* Status */
+
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px; /* Pill shape */
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-in-progress {
+  background-color: #e0f2f7; /* Light blue */
+  color: #0d6efd;
+}
+
+.status-scheduled {
+  background-color: #fff8e1; /* Light yellow */
+  color: #ffc107;
+}
+
+.status-pending {
+  background-color: #ffebee; /* Light red */
+  color: #dc3545;
+}
+
+.status-completed {
+  background-color: #e8f5e9; /* Light green */
+  color: #198754;
+}
+
+/* Cleanup old styles if necessary */
+.view-all-btn { 
+  display: none; /* Hide old button */
+}

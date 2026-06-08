@@ -1,0 +1,19 @@
+.admin-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+}
+
+.admin-content {
+  display: flex;
+  flex: 1;
+}
+
+.admin-main {
+  flex: 1;
+  padding: 30px;
+  margin-left: 10px;
+  width: calc(100% - 250px); /* Account for sidebar width */
+  overflow-y: auto;
+} 

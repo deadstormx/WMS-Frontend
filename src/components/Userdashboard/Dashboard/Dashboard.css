@@ -1,0 +1,90 @@
+.user-dashboard {
+  display: flex;
+  background-color: #f5f5f5;
+}
+
+.dashboard-wrapper {
+  background-color: rgb(250, 250, 250);
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin:20px;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .dashboard-wrapper {
+    flex-direction: column;
+  }
+} 
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+.popup-message {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  width: 350px;
+  white-space: pre-line; 
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+  background: transparent;
+  border: none;
+}
+
+/* Payment Options */
+.payment-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+/* Payment Icons */
+.payment-icon {
+  width: 60px; /* Adjust image size */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.payment-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Blur effect when popup is active */
+.blurred {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.khalti{
+  width:110px !important;
+}
