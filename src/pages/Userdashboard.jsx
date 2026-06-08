@@ -147,7 +147,7 @@ const Userdashboard = () => {
       try {
         // Submit the pickup request with payment method
         const response = await axios.post(
-          "${import.meta.env.VITE_API_URL}/api/pickups",
+          `${import.meta.env.VITE_API_URL}/api/pickups`,
           {
             ...pendingPickupData,
             payment: paymentMethod

@@ -19,7 +19,7 @@ const PickupManagement = () => {
   const fetchPickups = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("${import.meta.env.VITE_API_URL}/api/admin/pickups/history", {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/pickups/history`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -41,7 +41,7 @@ const Pickup = ({ addPickup, isPaymentPending }) => {
 
   const fetchRoutes = async () => {
     try {
-      const response = await axios.get("${import.meta.env.VITE_API_URL}/api/route/get-routes", {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/route/get-routes`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -56,7 +56,7 @@ const Pickup = ({ addPickup, isPaymentPending }) => {
 
   const fetchWasteTypes = async () => {
     try {
-      const response = await axios.get("${import.meta.env.VITE_API_URL}/api/collections", {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/collections", {
         headers: {
           Authorization: `Bearer ${token}`
         }
