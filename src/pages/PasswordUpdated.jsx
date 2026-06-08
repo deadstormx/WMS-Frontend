@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Forgotpassword.css'; 
+import '../styles/ForgotPassword.css';
 
 const PasswordUpdated = () => {
   return (
