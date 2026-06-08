@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import ErrorPopup from "../components/Userdashboard/Navbar/ErrorPopup";
 
-import '../styles/Forgotpassword.css';
+import '../styles/ForgotPassword.css';
 import formImage from '../assets/Mail.png';
 
 const ForgotOtp = () => {
