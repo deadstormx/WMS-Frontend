@@ -11,7 +11,7 @@ import Settings from "./pages/Settings";
 import PickupManagement from "./components/AdminDashboard/Dashboard/PickupManagement";
 import AdminRoutesPage from "./components/AdminDashboard/Dashboard/Routes";
 import Otp from "./pages/Otp.jsx";
-import ForgotPassword from "./pages/ForgotPassword.jsx";
+import ForgotPassword from "./pages/ForgotPasswordPage.jsx";
 import ForgotOtp from "./pages/ForgotOtp.jsx";
 import SetNewPassword from "./pages/SetNewPassword.jsx";
 import PasswordUpdated from "./pages/PasswordUpdated.jsx";
