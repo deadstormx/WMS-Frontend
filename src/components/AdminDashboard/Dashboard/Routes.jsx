@@ -58,7 +58,7 @@ const Routes = () => {
           return;
         }
 
-        const response = await fetch('http://localhost:3000/api/route/get-routes', {
+        const response = await fetch('${import.meta.env.VITE_API_URL}/api/route/get-routes', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -100,7 +100,7 @@ const Routes = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3000/api/route/update-route/${editingRoute.routeId}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/route/update-route/${editingRoute.routeId}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -131,7 +131,7 @@ const Routes = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:3000/api/route/add-route', {
+      const response = await fetch('${import.meta.env.VITE_API_URL}/api/route/add-route', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -160,7 +160,7 @@ const Routes = () => {
   const handleStartRoute = async (route) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3000/api/route/start-route/${route.routeId}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/route/start-route/${route.routeId}`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -177,7 +177,7 @@ const Routes = () => {
 
         setTimeout(async () => {
           try {
-            const completeResponse = await fetch(`http://localhost:3000/api/route/update-route/${route.routeId}`, {
+            const completeResponse = await fetch(`${import.meta.env.VITE_API_URL}/api/route/update-route/${route.routeId}`, {
               method: 'PUT',
               headers: {
                 'Authorization': `Bearer ${token}`,
@@ -216,7 +216,7 @@ const Routes = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3000/api/route/delete-route/${routeId}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/route/delete-route/${routeId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,

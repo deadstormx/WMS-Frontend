@@ -58,7 +58,7 @@ const Userdashboard = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/api/pickups/history?userId=${parsedUser.id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/pickups/history?userId=${parsedUser.id}`, {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -147,7 +147,7 @@ const Userdashboard = () => {
       try {
         // Submit the pickup request with payment method
         const response = await axios.post(
-          "http://localhost:3000/api/pickups",
+          "${import.meta.env.VITE_API_URL}/api/pickups",
           {
             ...pendingPickupData,
             payment: paymentMethod

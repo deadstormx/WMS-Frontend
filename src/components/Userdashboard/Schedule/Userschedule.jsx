@@ -28,7 +28,7 @@ const Userschedule = () => {
 
   const fetchRoutes = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/route/get-routes", {
+      const response = await axios.get("${import.meta.env.VITE_API_URL}/api/route/get-routes", {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -43,7 +43,7 @@ const Userschedule = () => {
 
   const fetchWasteTypes = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/collections", {
+      const response = await axios.get("${import.meta.env.VITE_API_URL}/api/collections", {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -64,7 +64,7 @@ const Userschedule = () => {
         const parsedUser = storedUser ? JSON.parse(storedUser) : null;
 
         if (parsedUser?.id && token) {
-          const response = await fetch(`http://localhost:3000/api/pickups/history?userId=${parsedUser.id}`, {
+          const response = await fetch(`${import.meta.env.VITE_API_URL}/api/pickups/history?userId=${parsedUser.id}`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
@@ -175,7 +175,7 @@ const Userschedule = () => {
         unit: editData.unit
       };
 
-      const response = await fetch(`http://localhost:3000/api/pickups/${editItem}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/pickups/${editItem}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -215,7 +215,7 @@ const Userschedule = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/pickups/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/pickups/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

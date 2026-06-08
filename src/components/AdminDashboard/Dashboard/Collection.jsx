@@ -44,7 +44,7 @@ const Collection = () => {
 
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:3000/api/collections', {
+      const res = await fetch('${import.meta.env.VITE_API_URL}/api/collections', {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -90,7 +90,7 @@ const Collection = () => {
 
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:3000/api/collections`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/collections`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -122,7 +122,7 @@ const Collection = () => {
 
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:3000/api/collections/${editingCollection._id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/collections/${editingCollection._id}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -151,7 +151,7 @@ const Collection = () => {
     if (!token || !editingCollection) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/api/collections/${editingCollection._id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/collections/${editingCollection._id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

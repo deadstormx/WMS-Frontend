@@ -75,7 +75,7 @@ const Header = () => {
   
     try {
       // First make the logout API call
-      await axios.post("http://localhost:3000/api/auth/logout", {}, {
+      await axios.post("${import.meta.env.VITE_API_URL}/api/auth/logout", {}, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

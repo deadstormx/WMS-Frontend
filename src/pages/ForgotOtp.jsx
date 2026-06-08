@@ -42,7 +42,7 @@ const ForgotOtp = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/api/auth/verify-otp', {
+      const response = await fetch('${import.meta.env.VITE_API_URL}/api/auth/verify-otp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
