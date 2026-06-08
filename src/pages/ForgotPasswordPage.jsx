@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
-import '../styles/Forgotpassword.css';
+import '../styles/ForgotPassword.css';
 import formImage from '../assets/forgotpassword.jpg';
 import ErrorPopup from "../components/Userdashboard/Navbar/ErrorPopup";
 
