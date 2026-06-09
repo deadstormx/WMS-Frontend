@@ -5,7 +5,7 @@ import { useNavigate, Link } from "react-router-dom";
 import AdminLayout from "../Navbar/AdminLayout";
 import "./AdminDashboard.css";
 
-const API_BASE_URL = `${import.meta.env.VITE_API_URL}/api`; // Updated to correct API URL
+const API_BASE_URL = `https://wms-backend-xdgv.onrender.com/api`; // Updated to correct API URL
 
 export default function AdminDashboard() {
   const navigate = useNavigate();

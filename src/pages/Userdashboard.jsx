@@ -58,7 +58,7 @@ const Userdashboard = () => {
     }
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/pickups/history?userId=${parsedUser.id}`, {
+      const response = await fetch(`https://wms-backend-xdgv.onrender.com/api/pickups/history?userId=${parsedUser.id}`, {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -147,7 +147,7 @@ const Userdashboard = () => {
       try {
         // Submit the pickup request with payment method
         const response = await axios.post(
-          `${import.meta.env.VITE_API_URL}/api/pickups`,
+          `https://wms-backend-xdgv.onrender.com/api/pickups`,
           {
             ...pendingPickupData,
             payment: paymentMethod
