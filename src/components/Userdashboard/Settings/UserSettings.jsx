@@ -59,7 +59,7 @@ const UserSettings = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        `https://wms-backend-xdgv.onrender.com/api/users/upload-avatar",
+        `https://wms-backend-xdgv.onrender.com/api/users/upload-avatar`,
         formData,
         {
           headers: {
@@ -115,7 +115,7 @@ const UserSettings = () => {
     }
 
     try {
-      const response = await axios.put(`https://wms-backend-xdgv.onrender.com/api/users/update-details", {
+      const response = await axios.put(`https://wms-backend-xdgv.onrender.com/api/users/update-details`, {
         fullName: userInfo.fullName,
         email: userInfo.email
       }, {
@@ -164,7 +164,7 @@ const UserSettings = () => {
     const token = localStorage.getItem("token");
 
     try {
-      await axios.post(`https://wms-backend-xdgv.onrender.com/api/auth/logout", {}, {
+      await axios.post(`https://wms-backend-xdgv.onrender.com/api/auth/logout`, {}, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -185,7 +185,7 @@ const UserSettings = () => {
     setIsDeleting(true);
   
     try {
-      await axios.delete(`https://wms-backend-xdgv.onrender.com/api/users/delete-account", {
+      await axios.delete(`https://wms-backend-xdgv.onrender.com/api/users/delete-account`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
