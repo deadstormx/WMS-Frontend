@@ -28,7 +28,7 @@ const Userschedule = () => {
 
   const fetchRoutes = async () => {
     try {
-      const response = await axios.get(`https://wms-backend-xdgv.onrender.com/api/route/get-routes", {
+      const response = await axios.get(`https://wms-backend-xdgv.onrender.com/api/route/get-routes`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -43,7 +43,7 @@ const Userschedule = () => {
 
   const fetchWasteTypes = async () => {
     try {
-      const response = await axios.get(`https://wms-backend-xdgv.onrender.com/api/collections", {
+      const response = await axios.get(`https://wms-backend-xdgv.onrender.com/api/collections`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

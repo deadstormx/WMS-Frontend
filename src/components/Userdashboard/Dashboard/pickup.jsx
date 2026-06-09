@@ -56,7 +56,7 @@ const Pickup = ({ addPickup, isPaymentPending }) => {
 
   const fetchWasteTypes = async () => {
     try {
-      const response = await axios.get(`https://wms-backend-xdgv.onrender.com/api/collections", {
+      const response = await axios.get(`https://wms-backend-xdgv.onrender.com/api/collections`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
