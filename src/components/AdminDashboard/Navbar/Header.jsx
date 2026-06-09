@@ -38,7 +38,7 @@ const Header = () => {
     
     try {
       // First make the logout API call
-      await axios.post(`https://wms-backend-xdgv.onrender.com/api/auth/logout", {}, {
+      await axios.post(`https://wms-backend-xdgv.onrender.com/api/auth/logout`, {}, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
